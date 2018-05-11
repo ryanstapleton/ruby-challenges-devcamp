@@ -17,6 +17,9 @@ require 'rspec'
 class Array
   def odd_selector
     self.select{|n| n.odd?}
+    
+    # alternatively
+    # select(&:odd?)
   end
 end
 
