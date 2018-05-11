@@ -12,7 +12,9 @@
 require 'rspec'
 
 def sum_generator(num)
-  (0..num).inject(:+)
+  (0..num).inject(&:+)
+  # Alternatively
+  # 0.upto(num).reduce(&:+)
 end
 
 describe 'sum_generator(argument):' do
