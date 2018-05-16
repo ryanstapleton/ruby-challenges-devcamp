@@ -21,7 +21,16 @@
 require 'rspec'
 
 def hashed_fizz_buzz num
+  answer_hash = {}
+  (1..num).each { |n| (n % 3 == 0) && (n % 5 == 0) ? answer_hash[n] = "FizzBuzz" : 
+                      n % 5 == 0 ? answer_hash[n] = "Buzz" : 
+                      n % 3 == 0 ? answer_hash[n] = "Fizz" : 
+                      answer_hash[n] = n
+                }
+  answer_hash
 end
+
+p hashed_fizz_buzz(25)
 
 describe 'Hashed FizzBuzz' do
   it 'generates a fizz buzz hash' do
